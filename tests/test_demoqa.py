@@ -7,7 +7,10 @@ def test_demoqa():
     browser.element("#firstName").type("Oleg")
     browser.element("#lastName").type("Teplov")
     browser.element("#userEmail").type("oteplov@gmail.com")
-    browser.element(".custom-radio>input[value='Other']+label").click()
+
+    browser.element("[for ='gender-radio-3']").click()
+    #browser.element(".custom-radio>input[value='Other']+label").click()
+
     browser.element("#userNumber").type("7123456789")
 
     browser.element("#dateOfBirthInput").perform(command.js.click)
@@ -17,7 +20,8 @@ def test_demoqa():
 
     browser.element('#subjectsInput').type("Hindi").press_enter()
 
-    browser.element(".custom-checkbox>input[value='2']+label").click()
+    #browser.element(".custom-checkbox>input[value='2']+label").click()
+    browser.element("[for ='hobbies-checkbox-2']").click()
 
     browser.element("#uploadPicture").send_keys(os.path.abspath("picture.jpg"))
 
